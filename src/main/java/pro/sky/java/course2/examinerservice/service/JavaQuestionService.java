@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pro.sky.java.course2.examinerservice.domain.Question;
 
 import java.util.*;
+
 @Service
 public class JavaQuestionService implements QuestionService {
     private Set<Question> questions = new HashSet<>();
@@ -12,11 +13,7 @@ public class JavaQuestionService implements QuestionService {
     @Override
     public Question add(String question, String answer) {
         Question q = new Question(question, answer);
-        if (questions.add(q)) {
-            return q;
-        } else {
-            return null;
-        }
+        return add(q);
     }
 
     @Override
