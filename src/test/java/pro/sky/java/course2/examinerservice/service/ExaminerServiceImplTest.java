@@ -29,10 +29,12 @@ class ExaminerServiceImplTest {
 
     @Test
     void getQuestions() {
-        when(javaQuestionService.getAll()).thenReturn(Set.of(
-                new Question("вопрос1", "ответ1"),
-                new Question("вопрос2", "ответ2"),
-                new Question("вопрос3", "ответ3")));
+        Question question1 = new Question("вопрос1", "ответ1");
+        Question question2 = new Question("вопрос2", "ответ2");
+        Question question3 = new Question("вопрос3", "ответ3");
+
+        when(javaQuestionService.getAll()).thenReturn(Set.of(question1, question2, question3));
+        when(javaQuestionService.getRandomQuestion()).thenReturn(question1).thenReturn(question1).thenReturn(question3);
         Collection<Question> actualQuestions = service.getQuestions(2);
         Set<Question> questionSet = new HashSet<>(actualQuestions);
         assertEquals(2,questionSet.size());
