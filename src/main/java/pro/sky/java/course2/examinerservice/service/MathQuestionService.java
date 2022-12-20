@@ -1,7 +1,6 @@
 package pro.sky.java.course2.examinerservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import pro.sky.java.course2.examinerservice.domain.Question;
 import pro.sky.java.course2.examinerservice.repository.QuestionRepository;
@@ -9,8 +8,7 @@ import pro.sky.java.course2.examinerservice.repository.QuestionRepository;
 import java.util.Collection;
 
 @Service
-public class JavaQuestionService implements QuestionService {
-    @Qualifier("javaQuestionRepository")
+public class MathQuestionService implements QuestionService {
     @Autowired
     QuestionRepository questionRepository;
 

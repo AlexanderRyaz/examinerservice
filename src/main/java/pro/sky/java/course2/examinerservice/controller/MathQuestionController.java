@@ -9,9 +9,9 @@ import pro.sky.java.course2.examinerservice.service.QuestionService;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/exam/java")
-public class JavaQuestionController {
-    @Qualifier("javaQuestionService")
+@RequestMapping("/exam/math")
+public class MathQuestionController {
+    @Qualifier("mathQuestionService")
     @Autowired
     private QuestionService service;
 
